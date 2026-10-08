@@ -1,7 +1,7 @@
 # ---------- Étape 1 : builder (installe les dépendances dans un venv) ----------
 FROM alpine:3.22 AS builder
 
-RUN apk add --no-cache python3~3.12
+RUN apk add --no-cache python3=~3.12
 
 WORKDIR /build
 COPY requirements.txt .
@@ -22,7 +22,7 @@ ENV PATH="/opt/venv/bin:$PATH" \
 # "!pyc" n'installe rien : il EXCLUT les .pyc précompilés (~10 Mo). DL3018 le prend
 # à tort pour un paquet non versionné, d'où l'exception ciblée sur cette seule ligne.
 # hadolint ignore=DL3018
-RUN apk add --no-cache python3~3.12 "!pyc" \
+RUN apk add --no-cache python3=~3.12 "!pyc" \
     && addgroup -S -g 10001 app \
     && adduser -S -u 10001 -G app -H -s /sbin/nologin app
 
