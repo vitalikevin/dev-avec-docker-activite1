@@ -1,0 +1,38 @@
+# Git
+.git
+.gitignore
+
+# CI et configuration des outils
+.github
+.hadolint.yaml
+
+# Fichiers Docker (inutiles dans l'image)
+Dockerfile*
+.dockerignore
+
+# Secrets et environnements locaux
+.env
+.env.*
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Archives et artefacts lourds
+*.tar
+*.tar.gz
+*.zip
+
+# Éditeurs et OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Documentation
+README.md
